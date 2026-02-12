@@ -66,6 +66,7 @@ function configureHeader(basePath) {
     "products-link": `${basePath}pages/expertise`,
     "announcements-link": `${basePath}pages/announcements`,
     "meetings-link": `${basePath}pages/meetings`,
+    "publications-link": `${basePath}pages/publications`,
     "docs-link": "https://docs.ngkorefoundation.org",
     "contact-link": `${basePath}pages/contact`,
   };

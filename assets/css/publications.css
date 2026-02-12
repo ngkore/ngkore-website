@@ -1,0 +1,262 @@
+/* Publications Page Styles */
+
+.publications-section {
+  padding: 80px 0;
+}
+
+.publications-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Publication Card */
+.pub-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(107, 155, 209, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: pubFadeIn 0.6s ease-out forwards;
+}
+
+.pub-card:nth-child(1) { animation-delay: 0.1s; }
+.pub-card:nth-child(2) { animation-delay: 0.2s; }
+.pub-card:nth-child(3) { animation-delay: 0.3s; }
+.pub-card:nth-child(4) { animation-delay: 0.4s; }
+
+.pub-card::before {
+  content: "";
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.pub-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(107, 155, 209, 0.2);
+}
+
+.pub-card-body {
+  padding: 32px;
+}
+
+/* Badge */
+.pub-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.pub-badge.whitepaper {
+  background: rgba(74, 144, 226, 0.1);
+  color: #4a90e2;
+}
+
+.pub-badge.technical-report {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.pub-badge.conference-paper {
+  background: rgba(139, 92, 246, 0.1);
+  color: #7c3aed;
+}
+
+/* Title */
+.pub-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+/* Meta (authors, date) */
+.pub-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.pub-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.pub-meta-item svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Description */
+.pub-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+/* Tags */
+.pub-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.pub-tag {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.pub-tag:hover {
+  background: rgba(107, 155, 209, 0.15);
+  color: var(--primary-color);
+}
+
+/* Action */
+.pub-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.pub-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 155, 209, 0.4);
+}
+
+.pub-action svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Bottom CTA */
+.pub-cta {
+  max-width: 800px;
+  margin: 48px auto 0;
+  text-align: center;
+  padding: 32px;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+}
+
+.pub-cta h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.pub-cta p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.pub-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.pub-cta-link:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.pub-cta-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .publications-section {
+    padding: 48px 0;
+  }
+
+  .pub-card-body {
+    padding: 24px;
+  }
+
+  .pub-title {
+    font-size: 1.15rem;
+  }
+
+  .pub-meta {
+    gap: 10px;
+  }
+
+  .pub-cta {
+    padding: 24px;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .publications-section {
+    padding: 32px 0;
+  }
+
+  .pub-card-body {
+    padding: 20px;
+  }
+
+  .pub-action {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@keyframes pubFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
